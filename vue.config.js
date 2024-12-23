@@ -47,6 +47,23 @@ module.exports = defineConfig({
           type: 'image/png',
         },
       ],
+      share_target: {
+        action: '/',
+        method: 'POST',
+        enctype: 'multipart/form-data',
+        params: {
+          files: [
+            {
+              name: 'htmlFiles',
+              accept: ['text/html', '.html'],
+            },
+            {
+              name: 'jsonFiles',
+              accept: ['text/json', '.json'],
+            },
+          ],
+        },
+      },
     },
   },
 });
